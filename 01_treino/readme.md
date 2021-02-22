@@ -7,4 +7,5 @@ Não esqueça de colocar o sinal de menos, `-`, antes de escrever (veja o exempl
 ## Apresentação
 
 - Ícaro Vidal Freire, Matemática.
+- Alvin Plantinga, Filosofo.
 - ... 
