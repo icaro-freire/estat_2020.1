@@ -1,4 +1,4 @@
-# Primeiro Teste (Ponto Extra)
+# Primeiro Teste
 
 ### Intruções
 Coloque apenas seu nome e o curso na lista abaixo.
