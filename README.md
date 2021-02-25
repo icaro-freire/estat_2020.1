@@ -19,5 +19,6 @@ Criei uma pasta nesse repositório (`01_treino`) para que você coloquem SEU NOM
 A tabela abaixo mostra a relação de alunos que fizeram a Lição (será atualizada constantemente).
 
 Aluno | Curso | Nota
-------|-------|------
-Mateus Reis da Silva | Química | 100 pontos
+---   |---    |---
+Mateus Reis da Silva     | Química   | 100 pontos
+Rosenilda Pereira Barreto| Matemática| 100 pontos
