@@ -20,5 +20,6 @@ A tabela abaixo mostra a relação de alunos que fizeram a Lição (será atuali
 
 Aluno | Curso | Nota
 ---   |---    |---
-Mateus Reis da Silva     | Química   | 100 pontos
-Rosenilda Pereira Barreto| Matemática| 100 pontos
+Mateus Reis da Silva      | Química    | 100 pontos
+Rosenilda Pereira Barreto | Matemática | 100 pontos
+Yago da Silva Menezes     | Matemática | 100 pontos
