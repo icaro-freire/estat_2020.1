@@ -14,6 +14,7 @@
 
 ## Lição 02
 Nessa lição, apenas quero que você tenha um primeiro contato com o GitHub.
+
 Criei uma pasta nesse repositório (`01_treino`) para que você coloquem SEU NOME e SEU CURSO no arquivo `reademe.md`.
 
 A tabela abaixo mostra a relação de alunos que fizeram a Lição (será atualizada constantemente).
