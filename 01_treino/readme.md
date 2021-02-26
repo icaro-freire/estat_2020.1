@@ -9,3 +9,4 @@ Não esqueça de colocar o sinal de menos, `-`, antes de escrever (veja o exempl
 - Ícaro Vidal Freire, Matemática.
 - Mateus Reis da Silva, Química. 
 - Rosenilda Pereira Barreto, Matemática.
+- Yago da Silva Menezes, Matemática.
