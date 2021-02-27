@@ -12,3 +12,4 @@ Não esqueça de colocar o sinal de menos, `-`, antes de escrever (veja o exempl
 - Yago da Silva Menezes, Matemática.
 - Sheila Santos da Rosa, Matemática. 
 -Nilson dos Santos Filho, Matemática.
+- Bruno Barros dos Passos, Matemática.
