@@ -24,3 +24,4 @@ Aluno | Curso | Nota
 Mateus Reis da Silva      | Química    | 100 pontos
 Rosenilda Pereira Barreto | Matemática | 100 pontos
 Yago da Silva Menezes     | Matemática | 100 pontos
+Sheila Santos da Rosa     | Matemática | 100 pontos
