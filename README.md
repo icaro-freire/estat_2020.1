@@ -21,12 +21,12 @@ Criei uma pasta nesse repositório (`01_treino`) para que você coloque SEU NOME
 ### 1.1 Notas da Lição 02
 A tabela abaixo mostra a relação de alunos que fizeram a Lição (será atualizada constantemente).
 
-Aluno | Curso | Nota
----   |---    |---
-Mateus Reis da Silva      | Química    | 100 pontos
-Rosenilda Pereira Barreto | Matemática | 100 pontos
-Yago da Silva Menezes     | Matemática | 100 pontos
-Sheila Santos da Rosa     | Matemática | 100 pontos
-Nilson dos Santos Filho   | Matemática | 100 pontos
-Bruno Barros dos Passos   | Matemática | 100 pontos
-Tiago dos Santos Alves    | Matemática | 100 pontos
+n   |Aluno | Curso | Nota
+--- |---   |---    |---
+01  | Mateus Reis da Silva      | Química    | 100 pontos
+02  | Rosenilda Pereira Barreto | Matemática | 100 pontos
+03  | Yago da Silva Menezes     | Matemática | 100 pontos
+04  | Sheila Santos da Rosa     | Matemática | 100 pontos
+05  | Nilson dos Santos Filho   | Matemática | 100 pontos
+06  | Bruno Barros dos Passos   | Matemática | 100 pontos
+07  | Tiago dos Santos Alves    | Matemática | 100 pontos
