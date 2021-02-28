@@ -29,3 +29,4 @@ Yago da Silva Menezes     | Matemática | 100 pontos
 Sheila Santos da Rosa     | Matemática | 100 pontos
 Nilson dos Santos Filho   | Matemática | 100 pontos
 Bruno Barros dos Passos   | Matemática | 100 pontos
+Tiago dos Santos Alves    | Matemática | 100 pontos
