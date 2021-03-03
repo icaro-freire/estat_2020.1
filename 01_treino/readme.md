@@ -1,4 +1,4 @@
-# Primeiro Teste (Ponto Extra)
+# Primeiro Teste
 
 ### Intruções
 Coloque apenas seu nome e o curso na lista abaixo.
@@ -7,4 +7,10 @@ Não esqueça de colocar o sinal de menos, `-`, antes de escrever (veja o exempl
 ## Apresentação
 
 - Ícaro Vidal Freire, Matemática.
-- SEU NOME, CURSO.
+- Mateus Reis da Silva, Química. 
+- Rosenilda Pereira Barreto, Matemática.
+- Yago da Silva Menezes, Matemática.
+- Sheila Santos da Rosa, Matemática. 
+- Nilson dos Santos Filho, Matemática.
+- Bruno Barros dos Passos, Matemática.
+- Tiago dos Santos Alves, Matemática.
