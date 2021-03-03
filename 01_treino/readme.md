@@ -14,3 +14,4 @@ Não esqueça de colocar o sinal de menos, `-`, antes de escrever (veja o exempl
 - Nilson dos Santos Filho, Matemática.
 - Bruno Barros dos Passos, Matemática.
 - Tiago dos Santos Alves, Matemática.
+- Helen de Jesus Borges, Química.
