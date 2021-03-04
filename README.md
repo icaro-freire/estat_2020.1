@@ -30,3 +30,4 @@ n   |Aluno | Curso | Nota
 05  | Nilson dos Santos Filho   | Matemática | 100 pontos
 06  | Bruno Barros dos Passos   | Matemática | 100 pontos
 07  | Tiago dos Santos Alves    | Matemática | 100 pontos
+08  | Helen de Jesus Borges     | Química    | 100 pontos
