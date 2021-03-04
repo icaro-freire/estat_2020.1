@@ -31,3 +31,17 @@ n   |Aluno | Curso | Nota
 06  | Bruno Barros dos Passos   | Matemática | 100 pontos
 07  | Tiago dos Santos Alves    | Matemática | 100 pontos
 08  | Helen de Jesus Borges     | Química    | 100 pontos
+
+## Lição 04
+Na Lição 04, quero que você conheça, inicialmente, a linguagem [Markdown](https://pt.wikipedia.org/wiki/Markdown).
+Usaremos essa linguagem para construir relatórios, apresentações, etc. no [R](https://www.r-project.org/).
+O pacote que nos dará a ligação entre os códigos R e a linguagem Markdown será o [RMarkdown](https://rmarkdown.rstudio.com/).
+Você pode ver alguns resultados surpreendentes [aqui](https://rmarkdown.rstudio.com/gallery.html).
+
+Nessa lição, você deve ir à pasta `02_licao-04` e colocar SEU NOME com um LINK que direcione para seu pequeno texto no próprio README.md do GitHub.
+Logicamente, o texto deve conte os itens pedidos na Lição disponibilizada no [AVA Presencial](https://avapresencial.ufrb.edu.br//).
+
+### Nota da Lição 04
+n   |aluno | curso | nota
+----| --------------------- | ----- | -----
+01  | Yago da Silva Menezes | Matemática | 100 pontos
