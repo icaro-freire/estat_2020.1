@@ -16,3 +16,4 @@ Não esqueça de colocar o sinal de menos, `-`, antes de escrever (veja o exempl
 - Tiago dos Santos Alves, Matemática.
 - Helen de Jesus Borges, Química.
 - Rosana cruz santos, Química
+-  Rebeca  Costa Vieira, Química.
