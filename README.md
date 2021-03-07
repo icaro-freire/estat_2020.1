@@ -44,6 +44,7 @@ Logicamente, o texto deve conte os itens pedidos na Lição disponibilizada no [
 
 ### Nota da Lição 04
 n   |aluno | curso | nota
-----| ---------------------  | ----- | -----
-01  | Yago da Silva Menezes  | Matemática | 100 pontos
-02  | Tiago dos Santos Alves | Química    | 100 pontos
+----| ------------------------- | ---------- | ----------
+01  | Yago da Silva Menezes     | Matemática | 100 pontos
+02  | Tiago dos Santos Alves    | Química    | 100 pontos
+03  | Rosenilda Pereira Barreto | Matemática | 100 pontos
