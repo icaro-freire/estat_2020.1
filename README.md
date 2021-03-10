@@ -50,3 +50,4 @@ n   |aluno | curso | nota
 02  | Tiago dos Santos Alves    | Química    | 100 pontos
 03  | Rosenilda Pereira Barreto | Matemática | 100 pontos
 04  | Rebeca Costa Vieira       | Química    | 100 pontos
+05  | Bruno Barros dos Passos   | Matemática | 100 pontos
