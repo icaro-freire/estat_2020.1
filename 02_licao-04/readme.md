@@ -7,3 +7,4 @@ Yago da Silva Menezes | [Lição 04](https://github.com/yago-menezes/texto-markd
 Tiago dos Santos Alves | [Lição 04](https://github.com/Tiago2332/texto-markdown)
 Rosenilda | [Lição 04](https://github.com/Rosenilda-Barreto/texto-markdown/blob/main/README.md)
 Rebeca | [Lição 04](https://github.com/vieirbeca/texto-markdown)
+Bruno Barros dos Passos | [Lição 04](https://github.com/brunnoobarros/texto-markdown)
