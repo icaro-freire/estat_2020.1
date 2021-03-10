@@ -51,3 +51,4 @@ n   |aluno | curso | nota
 03  | Rosenilda Pereira Barreto | Matemática | 100 pontos
 04  | Rebeca Costa Vieira       | Química    | 100 pontos
 05  | Bruno Barros dos Passos   | Matemática | 100 pontos
+06  | Mateus Reis da Silva      | Química    | 100 pontos
