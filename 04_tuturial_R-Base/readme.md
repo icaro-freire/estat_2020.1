@@ -1,4 +1,4 @@
-# Tutorial R Base <img src="figs/logo_R.png" align="right" width = "200px"/>
+# Tutorial R Base <img src="figs/logo_R.png" align="right" width = "180px"/>
 
 
 > Esse tutorial aborda aspectos iniciais e importantíssimos da linguagem R. Ele foi produzido com [learnr](https://rstudio.github.io/learnr/).
