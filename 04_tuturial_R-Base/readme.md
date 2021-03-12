@@ -1,14 +1,5 @@
-<p align = "center">
-   <img 
-        width = "200px"
-        align = "center"
-        src   = "figs/logo_R.png"
-        alt   = "R Base" 
-  >
-  <h2 align = "center">
-      Tutorial R Base
-  </h2>
-</p>
+# Tutorial R Base <img src="figs/logo_R.png" align="right" width = "200px"/>
+
 
 > Esse tutorial aborda aspectos iniciais e importantíssimos da linguagem R. Ele foi produzido com [learnr](https://rstudio.github.io/learnr/).
 > A ideia desse repositório é disponibilizar o arquivo `.Rmd` para que possam acessar o tutorial, mesmo sem _internet_.
