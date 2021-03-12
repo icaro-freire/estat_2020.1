@@ -2,7 +2,7 @@
    <img 
         width = "200px"
         align = "center"
-        src   = "/figs/logo_R.png"
+        src   = "figs/logo_R.png"
         alt   = "R Base" 
   >
   <h2 align = "center">
