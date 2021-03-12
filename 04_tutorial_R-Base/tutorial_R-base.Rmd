@@ -133,7 +133,7 @@ Agora, faça você:
 
 ### Exercício
 
-Atribua às variáveis `a`, `b` e `c`, abaixo, os valores de `log(exp(1))`, `b^{3^2}` e `-sqrt(100)`, respectivamente.
+Atribua às variáveis `a`, `b` e `c`, abaixo, os valores de `log(exp(1))`, `{3^2}` e `-sqrt(100)`, respectivamente.
 Depois calcule a soma dessas variáveis.
 
 ```{r atribuicao-soma, exercise=TRUE, exercise.lines = 6 }
