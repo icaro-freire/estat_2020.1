@@ -52,3 +52,10 @@ n   |aluno | curso | nota
 04  | Rebeca Costa Vieira       | Química    | 100 pontos
 05  | Bruno Barros dos Passos   | Matemática | 100 pontos
 06  | Mateus Reis da Silva      | Química    | 100 pontos
+
+## 3. Lição 05
+
+### 3.1 Nota da Lição 05
+n   | aluno | curso | nota
+--- | --------------------- | ---------- | -----------
+01  | Yago da Silva Menezes |	Matemática | 100 pontos	
