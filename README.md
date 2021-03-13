@@ -60,5 +60,6 @@ O objetivo dessa lição é múltiplo: você deve colocar, na pasta `03_licao-05
 
 ### 3.1 Nota da Lição 05
 n   | aluno | curso | nota
---- | --------------------- | ---------- | -----------
-01  | Yago da Silva Menezes |	Matemática | 100 pontos	
+--- | ------------------------- | ---------- | -----------
+01  | Yago da Silva Menezes     | Matemática | 100 pontos	
+02  | Rosenilda Pereira Barreto | Matemática | 100 pontos
