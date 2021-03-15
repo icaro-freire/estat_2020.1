@@ -7,3 +7,4 @@ nome | curso | link
 Ícaro Vidal Freire | Matemática | [Lição 05](https://github.com/icaro-freire/licao_05)
 Yago da Silva Menezes | Matemática | [Lição 05](https://github.com/yago-menezes/licao_05)
 Rosenilda Pereira Barreto|Matemática|[Lição 05](https://github.com/Rosenilda-Barreto/licao_05)
+Tiago dos Santos Alves | Matemática | [Lição 05](https://github.com/Tiago2332/licao_05)
