@@ -64,3 +64,4 @@ n   | aluno | curso | nota
 --- | ------------------------- | ---------- | -----------
 01  | Yago da Silva Menezes     | Matemática | 100 pontos	
 02  | Rosenilda Pereira Barreto | Matemática | 100 pontos
+03  | Tiago dos Santos Alves    | Química    | 100 pontos
