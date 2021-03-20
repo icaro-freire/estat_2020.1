@@ -66,3 +66,4 @@ n   | aluno | curso | nota
 02  | Rosenilda Pereira Barreto | Matemática | 100 pontos
 03  | Tiago dos Santos Alves    | Química    | 100 pontos
 04  | Mateus Reis da Silva      | Química    | 100 pontos
+05  | Nilson dos Santos Filho   | Matemática | 100 pontos
