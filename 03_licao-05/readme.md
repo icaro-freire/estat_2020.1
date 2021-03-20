@@ -8,4 +8,5 @@ nome | curso | link
 Yago da Silva Menezes | Matemática | [Lição 05](https://github.com/yago-menezes/licao_05)
 Rosenilda Pereira Barreto|Matemática|[Lição 05](https://github.com/Rosenilda-Barreto/licao_05)
 Tiago dos Santos Alves | Matemática | [Lição 05](https://github.com/Tiago2332/licao_05)
+Mateus Reus da Silva | Química | [Lição 05](https://github.com/Mateusreisdasilva/licao_05)
 Nilson dos Santos Filho | Matemática | [Lição 05](https://github.com/Nison-dos-Satos-Filho/Licao_05)
