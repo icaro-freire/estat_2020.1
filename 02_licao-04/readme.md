@@ -10,4 +10,4 @@ Rebeca | [Lição 04](https://github.com/vieirbeca/texto-markdown)
 Bruno Barros dos Passos | [Lição 04](https://github.com/brunnoobarros/texto-markdown)
 Mateus Reis | [Lição 04](https://github.com/Mateusreisdasilva/texto-markdown)
 Nilson dos Santos Filho|[Lição 04](https://github.com/Nison-dos-Satos-Filho/texto-markdown)
-Sheila Rosa
+Sheila Rosa | [Lição 04](https://github.com/SheilaRosa/texto-markdown/blob/main/README.md) 
