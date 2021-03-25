@@ -10,3 +10,4 @@ Rosenilda Pereira Barreto|Matemática|[Lição 05](https://github.com/Rosenilda-
 Tiago dos Santos Alves | Matemática | [Lição 05](https://github.com/Tiago2332/licao_05)
 Mateus Reus da Silva | Química | [Lição 05](https://github.com/Mateusreisdasilva/licao_05)
 Nilson dos Santos Filho | Matemática | [Lição 05](https://github.com/Nison-dos-Satos-Filho/Licao_05)
+Helen de Jesus Borges | Química | [Lição 05](https://github.com/helenborges/licao_05)
