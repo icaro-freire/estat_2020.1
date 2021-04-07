@@ -68,3 +68,20 @@ n   | aluno | curso | nota
 03  | Tiago dos Santos Alves    | Química    | 100 pontos
 04  | Mateus Reis da Silva      | Química    | 100 pontos
 05  | Nilson dos Santos Filho   | Matemática | 100 pontos
+
+## 4. Atividade Avaliativa I
+
+### 4.1 Leitura Obrigatória
+
+Para realização da Atividade Avaliativa I, leia os seguintes textos:
+
+1. [Tidyverse: uma Filosofia para Manipular Dados](docs/01_tidyverse_filosofia.html)
+2. [Lendo os dados](docs/02_readr.html)
+3. [Dados Tidy](docs/03_tidyr.html)
+
+### 4.2 Slides das Apresentações
+
+1. [Tidyverse](docs/01_slides_tidyverse-filosofia.html) 
+2. [Readr: Lendo Dados](docs/02_slides_readr.html)
+3. [Tidyr: Dados Tidy-Organizados](docs/03_slides_tidyr.html)
+
