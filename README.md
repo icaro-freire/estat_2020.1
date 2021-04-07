@@ -90,3 +90,5 @@ Pacotes tangenciados | Texto | Slide
 [slide1]: https://icaro-freire.github.io/estat_2020.1/01_slide_tidyverse-filosofia.html
 [slide2]: https://icaro-freire.github.io/estat_2020.1/02_slides_readr.html
 [slide3]: https://icaro-freire.github.io/estat_2020.1/03_slides_tidyr.html
+
+**Obs.:** Caso queira acesso aos arquivos `.Rmd` que produzem os slides , veja o _branch_ "slides".
