@@ -75,13 +75,13 @@ n   | aluno | curso | nota
 
 Para realização da Atividade Avaliativa I, leia os seguintes textos:
 
-1. [Tidyverse: uma Filosofia para Manipular Dados](docs/01_tidyverse_filosofia.html)
-2. [Lendo os dados](docs/02_readr.html)
-3. [Dados Tidy](docs/03_tidyr.html)
+1. [Tidyverse: uma Filosofia para Manipular Dados](https://icaro-freire.github.io/estat_2020.1/01_tidyverse_filosofia.html)
+2. [Lendo os dados](https://icaro-freire.github.io/estat_2020.1/02_readr.html)
+3. [Dados Tidy](https://icaro-freire.github.io/estat_2020.1/03_tidyr.html)
 
 ### 4.2 Slides das Apresentações
 
-1. [Tidyverse](docs/01_slides_tidyverse-filosofia.html) 
-2. [Readr: Lendo Dados](docs/02_slides_readr.html)
-3. [Tidyr: Dados Tidy-Organizados](docs/03_slides_tidyr.html)
+1. [Tidyverse](https://icaro-freire.github.io/estat_2020.1/01_slide_tidyverse-filosofia.html) 
+2. [Readr: Lendo Dados](https://icaro-freire.github.io/estat_2020.1/02_slides_readr.html)
+3. [Tidyr: Dados Tidy-Organizados](https://icaro-freire.github.io/estat_2020.1/03_slides_tidyr.html)
 
