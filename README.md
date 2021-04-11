@@ -68,3 +68,27 @@ n   | aluno | curso | nota
 03  | Tiago dos Santos Alves    | Química    | 100 pontos
 04  | Mateus Reis da Silva      | Química    | 100 pontos
 05  | Nilson dos Santos Filho   | Matemática | 100 pontos
+
+## 4. Atividade Avaliativa I
+
+Para realização da _Atividade Avaliativa I_, veja os seguintes textos:
+
+Pacotes tangenciados | Texto | Slide
+---|---| ---
+[`tidyverse`][tidy], [`tibble`][tib], [`magrittr`][pipe] | [Tidyverse: uma Filosofia para Manipular Dados][text1] | [Tidyverse][slide1]
+[`readr`][readr] | [Lendo os dados][text2] | [Readr: Lendo Dados][slide2] 
+[`tidyr`][tidyr] | [Dados Tidy][text3] | [Tidyr: Dados Tidy-Organizados][slide3] 
+
+[tidy]:   https://tidyverse.tidyverse.org/index.html
+[tib]:    https://tibble.tidyverse.org/
+[pipe]:   https://magrittr.tidyverse.org/
+[readr]:  https://readr.tidyverse.org/
+[tidyr]:  https://tidyr.tidyverse.org/
+[text1]:  https://icaro-freire.github.io/estat_2020.1/01_tidyverse_filosofia.html
+[text2]:  https://icaro-freire.github.io/estat_2020.1/02_readr.html
+[text3]:  https://icaro-freire.github.io/estat_2020.1/03_tidyr.html
+[slide1]: https://icaro-freire.github.io/estat_2020.1/01_slide_tidyverse-filosofia.html
+[slide2]: https://icaro-freire.github.io/estat_2020.1/02_slides_readr.html
+[slide3]: https://icaro-freire.github.io/estat_2020.1/03_slides_tidyr.html
+
+**Obs.:** Caso queira acesso aos arquivos `.Rmd` que produzem os slides , veja o _branch_ "slides".
