@@ -47,7 +47,7 @@ Logicamente, o texto deve conte os itens pedidos na Lição disponibilizada no [
 n   |aluno | curso | nota
 ----| ------------------------- | ---------- | ----------
 01  | Yago da Silva Menezes     | Matemática | 100 pontos
-02  | Tiago dos Santos Alves    | Química    | 100 pontos
+02  | Tiago dos Santos Alves    | Matemática | 100 pontos
 03  | Rosenilda Pereira Barreto | Matemática | 100 pontos
 04  | Rebeca Costa Vieira       | Química    | 100 pontos
 05  | Bruno Barros dos Passos   | Matemática | 100 pontos
@@ -65,9 +65,10 @@ n   | aluno | curso | nota
 --- | ------------------------- | ---------- | -----------
 01  | Yago da Silva Menezes     | Matemática | 100 pontos	
 02  | Rosenilda Pereira Barreto | Matemática | 100 pontos
-03  | Tiago dos Santos Alves    | Química    | 100 pontos
+03  | Tiago dos Santos Alves    | Matemática | 100 pontos
 04  | Mateus Reis da Silva      | Química    | 100 pontos
 05  | Nilson dos Santos Filho   | Matemática | 100 pontos
+06  | Bruno Barros dos Passos	  | Matemática | 100 pontos	
 
 ## 4. Atividade Avaliativa I
 
