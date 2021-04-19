@@ -3365,7 +3365,46 @@ code span.ot { color: #007020; }
 <div id="considerações-finais" class="section level2">
 <h2>Considerações finais</h2>
 <p>Lembrem-se que esse é um texto introdutório, só aprenderemos a manipular, limpar e organizar os dados, praticando.</p>
-<p>E, obviamente, o pacoter <code>dplyr</code> não é usado sozinho. Perguntas importante são feitas que, nem sempre, dados estatísticos puros são suficientes. Uma outra parte da analise de dados é necessária: a visualização dos dados. E, para isso, usaremos o pacote <code>ggplot2</code>.</p>
+<p>E, obviamente, o pacoter <code>dplyr</code> não é usado sozinho.</p>
+<p>Mas, ficamos impressionados com os aspectos quantitativos que podemos extrair dos nossos <em>datasets</em>. Todavia, nem sempre aspectos númericos são suficientes para uma boa intrerpretação estatística.</p>
+<p>Para mostrarmos a afirmação do parágrafo anterior, consideremos um <em>dataset</em> especial, construído artificialmente pelo estatístico Francis Anscombe. Esse conjunto de dados é conhecido por <a href="https://pt.wikipedia.org/wiki/Quarteto_de_Anscombe">Quarteto de Anscombe</a>.</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>dados_enganosos &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;dados/quarteto_de_anscombe.csv&quot;</span>)</span>
+<span id="cb47-2"><a href="#cb47-2"></a></span>
+<span id="cb47-3"><a href="#cb47-3"></a>dados_enganosos</span></code></pre></div>
+<pre><code>## # A tibble: 44 x 3
+##    dados     x     y
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1 I        10  8.04
+##  2 I         8  6.95
+##  3 I        13  7.58
+##  4 I         9  8.81
+##  5 I        11  8.33
+##  6 I        14  9.96
+##  7 I         6  7.24
+##  8 I         4  4.26
+##  9 I        12 10.8 
+## 10 I         7  4.82
+## # ... with 34 more rows</code></pre>
+<p>Temos, então, quatro conjuntos de dados (I, II, III, e IV), com 11 observações numéricas em cada um deles, totalizando 44 observações. Vamos sumarizar as variáveis numéricas com algumas estatísticas conhecidas<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>dados_enganosos <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="st">  </span><span class="kw">group_by</span>(dados) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="st">  </span><span class="kw">summarise</span>(</span>
+<span id="cb49-4"><a href="#cb49-4"></a>    <span class="dt">media_x =</span> <span class="kw">mean</span>(x),</span>
+<span id="cb49-5"><a href="#cb49-5"></a>    <span class="dt">dp_x =</span> <span class="kw">sd</span>(x),</span>
+<span id="cb49-6"><a href="#cb49-6"></a>    <span class="dt">media_y =</span> <span class="kw">mean</span>(y),</span>
+<span id="cb49-7"><a href="#cb49-7"></a>    <span class="dt">dp_y =</span> <span class="kw">sd</span>(y),</span>
+<span id="cb49-8"><a href="#cb49-8"></a>    <span class="dt">r_pearson =</span> <span class="kw">round</span>(<span class="kw">cor</span>(x, y), <span class="dv">2</span>)</span>
+<span id="cb49-9"><a href="#cb49-9"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 6
+##   dados media_x  dp_x media_y  dp_y r_pearson
+##   &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;
+## 1 I           9  3.32    7.50  2.03      0.82
+## 2 II          9  3.32    7.50  2.03      0.82
+## 3 III         9  3.32    7.5   2.03      0.82
+## 4 IV          9  3.32    7.50  2.03      0.82</code></pre>
+<p>Vejam que, para cada grupo de dados, tanto para <span class="math inline">\(x\)</span> quanto para <span class="math inline">\(y\)</span>: a média é a mesma; o desvio padrão é o mesmo; e, o coeficiente de correlação de Pearson também é o mesmo. Mas, será que esses dados são tão semelhantes assim?</p>
+<p>Esse conjunto de dados nos mostra a relevância de uma outra parte da analise de dados, absolutamente necessária: a visualização dos dados.</p>
+<p>E, para isso, usaremos o pacote <code>ggplot2</code>.</p>
 <hr />
 <pre><code>                                     _       _            
                                     | |     | |           
@@ -3375,6 +3414,12 @@ code span.ot { color: #007020; }
                                  \__,_| .__/|_|\__, |_|   
                                       | |       __/ |     
                                       |_|      |___/      </code></pre>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Caso você não conheça o Coeficiente de Correlação de Pearson, veja <a href="https://pt.wikipedia.org/wiki/Coeficiente_de_correla%C3%A7%C3%A3o_de_Pearson">aqui</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
     </section>
   </div>
