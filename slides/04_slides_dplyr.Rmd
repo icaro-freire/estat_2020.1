@@ -1,0 +1,442 @@
+---
+title: "dplyr"
+subtitle: "Manipulando Dados"  
+author: "Ícaro Vidal Freire"
+institute: "Estat 2020.1"  
+date: '`r Sys.Date()`'
+output:
+  xaringan::moon_reader:
+    encoding: "UTF-8"
+    css: xaringan-themer.css
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(
+  fig.width=9, fig.height=3.5, fig.retina=3,
+  out.width = "100%",
+  cache = FALSE,
+  echo = TRUE,
+  message = FALSE, 
+  warning = FALSE,
+  fig.show = TRUE,
+  hiline = TRUE
+)
+library(tidyverse)
+library(dados)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(
+  primary_color = "#5E81AC",
+  secondary_color = "#2E3440",
+  inverse_header_color = "#A3BE8C"
+)
+xaringanExtra::use_tile_view() # para overwiew
+xaringanExtra::use_scribble()  # para escrever na apresentação
+xaringanExtra::use_clipboard() # para copiar códigos
+xaringanExtra::use_panelset()  # para abas nos slides
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         #<<
+  mute_unhighlighted_code = TRUE  #<<
+)
+```
+
+class: about-me, middle, center
+
+[![](img/github_huge.png)](https://github.com/icaro-freire/estat_2020.1) </br>
+[**Estat_2020.1**](https://github.com/icaro-freire/estat_2020.1)
+
+---
+class: inverse center middle
+
+```{r, echo=FALSE, fig.align='center', out.width='30%'}
+knitr::include_graphics("img/dplyr.png")
+```
+---
+
+## A arte de manipilar dados
+.panelset[
+.panel[.panel-name[Necessidade]
+- Cerca de 80% do tempo de análise dos dados: coleta + limpeza + organização
+- Cerca de 76% dos entrevistados consideram a preparação dos dados como a parte menos agradável de seu trabalho.
+- Usar ferramentas que mitigam tal sentimento/realidade é fundamental
+- `R Base` ou `dplyr`?
+- Com funções simples que realizam tarefas pequenas, juntam-se para chegar a um resultado robusto e organizado.
+    + característica persuasiva
+- Falaremos dos principais verbos (funções) e algumas funções auxiliares do `dplyr`.
+]
+.panel[.panel-name[Folhas de Dicas]
+
+<a href='https://icaro-freire.github.io/estat_2020.1/cheat-sheet_dplyr.pdf'>
+```{r, fig.align='center', out.width='50%', echo=FALSE}
+knitr::include_graphics("img/cheat-sheet_dplyr.png")
+```
+</a>
+]
+.panel[.panel-name[Principais Funções]
+.pull-left[
+- `dplyr`: _gramática de manipulação de dados_.
+    + conjunto de "verbos" (funções) simples
+    + concatenados pelo ` %>% `
+    
+```{r, echo=FALSE}
+knitr::include_graphics("img/tijolo.jpg")
+```
+
+
+]
+
+.pull-right[
+Principais verbos/funções do `dplyr`
+
+| Verbo | Descrição curta |
+| ----- | --------- |
+| [mutate()][MUT] | "modifica"/adiciona novas variáveis preservando as existentes|
+| [select()][SEL]| "seleciona" as variáveis/colunas |
+| [filter()][FIL]| "filtra" casos com base em seus valores.|
+| [summarise()][SUM]| "sumariza" vários valores a um único|
+| [arrange()][ARR]| "arruma" a ordem das linhas|
+
+[MUT]: https://dplyr.tidyverse.org/reference/mutate.html
+[SEL]: https://dplyr.tidyverse.org/reference/select.html
+[FIL]: https://dplyr.tidyverse.org/reference/filter.html
+[SUM]: https://dplyr.tidyverse.org/reference/summarise.html
+[ARR]: https://dplyr.tidyverse.org/reference/arrange.html
+]
+
+]
+
+.panel[.panel-name[Nossos dados]
+
+```{r, echo=FALSE}
+knitr::kable(head(milhas, 7))
+```
+]
+.panel[.panel-name[Let's go!]
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+knitr::include_graphics("img/lets-go.gif")
+```
+
+]
+<!-- x -->
+]
+---
+
+## Algo sobre a função `mutate()`
+
+.panelset[
+.panel[.panel-name[Ideia Visual]
+.pull-left[
+- cria uma nova coluna (variável) que esteja relacionada com outras colunas (variáveis) ou com alguma relação matemática.
+- Um exemplo:
+```{r, eval=FALSE}
+dados_mpg %>% 
+  mutate(
+    cidade_km = 1.6 * cidade
+  )
+```
+]
+.pull-right[
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("img/mutate.png")
+```
+]
+]
+.panel[.panel-name[Prática I]
+```{r, echo=FALSE, fig.align='center', out.width='50%'}
+knitr::include_graphics("img/gato.gif")
+```
+]
+.panel[.panel-name[`recode()`]
+.pull-left[
+- Associação harmoniosa
+    + Uma delas é a `recode()`.
+
+- Exemplo: na variável `transmissao`:
+    + duas categorias de marchas: _manual_ ou _automática_.
+- Como poderíamos criar uma coluna onde apareça apenas esses duas categorias?
+    + `distinct()`
+    + recodificar
+]
+.pull-right[
+```{r, eval=FALSE}
+mutate(
+  nova_variavel = recode(
+    variavel_antiga,
+    "variacao_antiga_1" = "nova_variacao_1",
+    "variacao_antiga_2" = "nova_variacao_2",
+    ...
+  )
+)
+```
+]
+]
+.panel[.panel-name[Prática II]
+```{r, echo=FALSE, fig.align='center', out.width='50%'}
+knitr::include_graphics("img/gato.gif")
+```
+]
+
+<!-- x -->
+]
+
+---
+
+## Algo sobre a função `select()`
+.panelset[
+.panel[.panel-name[Ideia Geral]
+.pull-left[
+- Seleciona colunas
+- Existem muitas formas de seleção:
+    + `select(cilindros)`
+    + `select(!cilindros)` 
+        * `select(-cilindros)`
+    + `select(fabricante, ..., ano)`
+    + `select(fabricante:ano)`
+    + `select(1:4)`
+    + misturando tudo!
+]
+.pull-right[
+```{r, echo=FALSE, fig.align='center', out.width='80%'}
+knitr::include_graphics("img/select.png")
+```
+]
+]
+.panel[.panel-name[Prática]
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+knitr::include_graphics("img/preguica.gif")
+```
+
+]
+<!-- x -->
+]
+---
+
+## Algo sobre a função `filter()`
+.panelset[
+.panel[.panel-name[Ideia Geral]
+.pull-left[
+- filtra **linhas**
+- A filtragem deve seguir alguma lógica
+    + operadores lógicos
+```{r, eval=FALSE}
+filter(
+  fabricante == "toyota" & cilindrada > 3
+)
+```
+- Uma outra forma de filtrar linhas
+    + `slice()`
+]
+.pull-right[
+```{r, echo=FALSE, fig.align='center', out.width='80%'}
+knitr::include_graphics("img/filter.png")
+```
+]
+.panel[.panel-name[Operadores Lógicos]
+```{r, echo=FALSE, fig.align='center', out.width='80%'}
+knitr::include_graphics("img/operadores_logicosl.png")
+```
+]
+]
+.panel[.panel-name[Prática]
+```{r, echo=FALSE, fig.align='center', out.width='55%'}
+knitr::include_graphics("img/pregica2.gif")
+```
+
+]
+<!-- x -->
+]
+---
+
+## Algo sobre a função `summarise()`
+.panelset[
+.panel[.panel-name[Ideia Geral]
+.pull-left[
+- Quantificar variáveis
+  + média 
+  + mediana
+  + desvio padrão 
+  + coeficiente de correlação 
+  + frequência absoluta, relativa ou acumulada; 
+  + quantis
+  + máximo e mínimo
+  + etc.
+```{r, eval=FALSE}
+summarise(
+    media_cidade = mean(cidade),      
+    mediana_cidade = median(cidade),  
+    dp_cidade = sd(cidade),           
+    max_cidade = max(cidade),         
+    min_cidade = min(cidade)          
+  ) 
+```
+
+]
+.pull-right[
+```{r, echo=FALSE, fig.align='center', out.width='90%'}
+knitr::include_graphics("img/summarise.png")
+```
+]
+]
+.panel[.panel-name[Pratica I]
+```{r, echo=FALSE, fig.align='center', out.width='25%'}
+knitr::include_graphics("img/preguica3.gif")
+```
+]
+.panel[.panel-name[Misturando]
+- Usando a função `filter()`
+- Exemplo 01
+```{r, eval=FALSE}
+dados_mpg %>% 
+  filter(fabricante == "chevrolet") %>%  # filtra os carros da chevrolet
+  summarise(media_cidade = mean(cidade)) # sumariza com a média
+```
+- Exemplo 02
+```{r, eval=FALSE}
+dados_mpg %>% 
+  filter(fabricante == "chevrolet" & combustivel == "r") %>% 
+  summarise(media_gasolina = mean(cidade))
+```
+]
+.panel[.panel-name[Pratica II]
+```{r, echo=FALSE, fig.align='center', out.width='25%'}
+knitr::include_graphics("img/preguica3.gif")
+```
+]
+.panel[.panel-name[`group_by()`]
+.pull-left[
+- separa as categorias em cada observação semelhante, agrupando-as adequadamente.
+```{r, eval=FALSE}
+dados_mpg %>% 
+  group_by(fabricante) %>% 
+  summarise(media_cidade = mean(cidade))
+```
+]
+.pell-right[
+```{r, echo=FALSE, fig.align='center', out.width='50%'}
+knitr::include_graphics("img/group_by.png")
+```
+]
+]
+.panel[.panel-name[Prática III]
+```{r, echo=FALSE, fig.align='center', out.width='25%'}
+knitr::include_graphics("img/preguica3.gif")
+```
+]
+.panel[.panel-name[Frequência]
+.pull-left[
+- Usando o agrupamento
+```{r, eval=FALSE}
+dados_mpg %>% 
+  group_by(combustivel) %>% 
+  select(combustivel) %>% 
+  summarise(
+    n = n(),             # frequência absoluta
+    f = (n / 234) * 100  # frequência relativa
+  )
+```
+]
+.pull-right[
+- Sem agrupamento direto
+```{r, eval=FALSE}
+dados_mpg %>% 
+  count(combustivel)
+```
+]
+]
+.panel[.panel-name[Prática IV]
+```{r, echo=FALSE, fig.align='center', out.width='25%'}
+knitr::include_graphics("img/preguica3.gif")
+```
+]
+
+<!-- x -->
+]
+---
+
+## Algo sobre a função `arrange()`
+.panelset[
+.panel[.panel-name[Ideia Geral]
+.pull-left[
+- Organiza de forma crescente
+    + `desc()` 
+- Exemplo 01
+```{r, eval=FALSE}
+dados_mpg %>% 
+  group_by(fabricante) %>% 
+  summarise(media_cidade = mean(cidade)) %>% 
+  arrange(media_cidade) # note a variável dentro do argumento da função
+```
+
+- Exemplo 02
+```{r, eval=FALSE}
+dados_mpg %>% 
+  select(modelo, transmissao, cidade) %>% 
+  arrange(desc(cidade)) %>% 
+  top_n(5)
+
+```
+
+]
+.pull-right[
+```{r, echo=FALSE, fig.align='center', out.width='90%'}
+knitr::include_graphics("img/arrange.png")
+```
+]
+.panel[.panel-name[Prática]
+```{r, echo=FALSE, fig.align='center', out.width='40%'}
+knitr::include_graphics("img/pratica-arrange.gif")
+```
+
+]
+]
+<!-- x -->
+]
+---
+
+## Apenas a Quantificação Estatística é Importante?
+
+.panelset[
+.panel[.panel-name[Os Cegos e o Elefante]
+```{r, echo=FALSE, fig.align='center', out.width='70%'}
+knitr::include_graphics("img/elefante.jpg")
+```
+]
+
+.panel[.panel-name[Quarteto de Anscombe]
+```{r, echo=FALSE, fig.align='center', out.width='40%'}
+knitr::include_graphics("img/tabela-anscombe.png")
+```
+
+]
+
+.panel[.panel-name[Prática]
+```{r, echo=FALSE, fig.align='center', out.width='60%'}
+knitr::include_graphics("img/queda.gif")
+```
+
+]
+<!-- x -->
+]
+
+
+
+---
+class: center, middle
+
+# Fim!
+
+##### Veja atualizações na página de nossa disciplina no GitHub:
+
+[![](img/github_small.png)](https://github.com/icaro-freire/estat_2020.1) </br>
+[**Estat_2020.1**](https://github.com/icaro-freire/estat_2020.1)
