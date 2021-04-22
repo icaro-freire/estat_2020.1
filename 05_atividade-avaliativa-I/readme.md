@@ -2,4 +2,4 @@
 
 |nome               | curso      | link  
 |:------------------|:-----------|:-----:
-| Seu nome completo | Matemática | [nome](https://github.com/icaro-freire/estat_2020.1/tree/main/05_atividade-avaliativa-I)
+|Nilson dos Santos Filho | Matemática | [01_atividade-avaliativa](https://github.com/Nison-dos-Satos-Filho/01_atividade-avaliativa)
