@@ -47,12 +47,13 @@ Logicamente, o texto deve conte os itens pedidos na Lição disponibilizada no [
 n   |aluno | curso | nota
 ----| ------------------------- | ---------- | ----------
 01  | Yago da Silva Menezes     | Matemática | 100 pontos
-02  | Tiago dos Santos Alves    | Química    | 100 pontos
+02  | Tiago dos Santos Alves    | Matemática | 100 pontos
 03  | Rosenilda Pereira Barreto | Matemática | 100 pontos
 04  | Rebeca Costa Vieira       | Química    | 100 pontos
 05  | Bruno Barros dos Passos   | Matemática | 100 pontos
 06  | Mateus Reis da Silva      | Química    | 100 pontos
 07  | Nison dos Satos Filho     | Matemática | 100 pontos
+08  | Sheila Rosa               | Química    | 100 pontos
 
 ## 3. Lição 05
 O objetivo dessa lição é múltiplo: você deve colocar, na pasta `03_licao-05`, deste repoditório, um _link_ que direcione para um repositório criado por você que contenha duas pastas e, em cada uma delas, um arquivo específico: numa, um _script R_ que contém códigos de uma função específica (diponível nesse [gist][GIST]); e noutra, um arquivo `.Rmd` que contrém um documento GitHub (que gera códigos e figuras do R, para serem exibidas no GitHub). 
@@ -64,6 +65,31 @@ n   | aluno | curso | nota
 --- | ------------------------- | ---------- | -----------
 01  | Yago da Silva Menezes     | Matemática | 100 pontos	
 02  | Rosenilda Pereira Barreto | Matemática | 100 pontos
-03  | Tiago dos Santos Alves    | Química    | 100 pontos
+03  | Tiago dos Santos Alves    | Matemática | 100 pontos
 04  | Mateus Reis da Silva      | Química    | 100 pontos
 05  | Nilson dos Santos Filho   | Matemática | 100 pontos
+06  | Bruno Barros dos Passos	  | Matemática | 100 pontos	
+
+## 4. Atividade Avaliativa I
+
+Para realização da _Atividade Avaliativa I_, veja os seguintes textos:
+
+Pacotes tangenciados | Texto | Slide
+---|---| ---
+[`tidyverse`][tidy], [`tibble`][tib], [`magrittr`][pipe] | [Tidyverse: uma Filosofia para Manipular Dados][text1] | [Tidyverse][slide1]
+[`readr`][readr] | [Lendo os dados][text2] | [Readr: Lendo Dados][slide2] 
+[`tidyr`][tidyr] | [Dados Tidy][text3] | [Tidyr: Dados Tidy-Organizados][slide3] 
+
+[tidy]:   https://tidyverse.tidyverse.org/index.html
+[tib]:    https://tibble.tidyverse.org/
+[pipe]:   https://magrittr.tidyverse.org/
+[readr]:  https://readr.tidyverse.org/
+[tidyr]:  https://tidyr.tidyverse.org/
+[text1]:  https://icaro-freire.github.io/estat_2020.1/01_tidyverse_filosofia.html
+[text2]:  https://icaro-freire.github.io/estat_2020.1/02_readr.html
+[text3]:  https://icaro-freire.github.io/estat_2020.1/03_tidyr.html
+[slide1]: https://icaro-freire.github.io/estat_2020.1/01_slide_tidyverse-filosofia.html
+[slide2]: https://icaro-freire.github.io/estat_2020.1/02_slides_readr.html
+[slide3]: https://icaro-freire.github.io/estat_2020.1/03_slides_tidyr.html
+
+**Obs.:** Caso queira acesso aos arquivos `.Rmd` que produzem os slides , veja o _branch_ ["slides".](https://github.com/icaro-freire/estat_2020.1/tree/slides)

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>dplyr</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ícaro Vidal Freire" />
+    <meta name="date" content="2021-04-20" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# dplyr
+## Manipulando Dados
+### Ícaro Vidal Freire
+### Estat 2020.1
+### 2021-04-20
+
+---
+
+
+
+
+
+
+class: about-me, middle, center
+
+[![](img/github_huge.png)](https://github.com/icaro-freire/estat_2020.1) &lt;/br&gt;
+[**Estat_2020.1**](https://github.com/icaro-freire/estat_2020.1)
+
+---
+class: inverse center middle
+
+&lt;img src="img/dplyr.png" width="30%" style="display: block; margin: auto;" /&gt;
+---
+
+## A arte de manipular dados
+.panelset[
+.panel[.panel-name[Necessidade]
+- Cerca de 80% do tempo de análise dos dados: coleta + limpeza + organização
+- Cerca de 76% dos entrevistados consideram a preparação dos dados como a parte menos agradável de seu trabalho.
+- Usar ferramentas que mitigam tal sentimento/realidade é fundamental
+- `R Base` ou `dplyr`?
+- Com funções simples que realizam tarefas pequenas, juntam-se para chegar a um resultado robusto e organizado.
+    + característica persuasiva
+- Falaremos dos principais verbos (funções) e algumas funções auxiliares do `dplyr`.
+]
+.panel[.panel-name[Folhas de Dicas]
+
+&lt;a href='https://icaro-freire.github.io/estat_2020.1/cheat-sheet_dplyr.pdf'&gt;
+&lt;img src="img/cheat-sheet_dplyr.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;/a&gt;
+]
+.panel[.panel-name[Principais Funções]
+.pull-left[
+- `dplyr`: _gramática de manipulação de dados_.
+    + conjunto de "verbos" (funções) simples
+    + concatenados pelo ` %&gt;% `
+    
+&lt;img src="img/tijolo.jpg" width="100%" /&gt;
+
+
+]
+
+.pull-right[
+Principais verbos/funções do `dplyr`
+
+| Verbo | Descrição curta |
+| ----- | --------- |
+| [mutate()][MUT] | "modifica"/adiciona novas variáveis preservando as existentes|
+| [select()][SEL]| "seleciona" as variáveis/colunas |
+| [filter()][FIL]| "filtra" casos com base em seus valores.|
+| [summarise()][SUM]| "sumariza" vários valores a um único|
+| [arrange()][ARR]| "arruma" a ordem das linhas|
+
+[MUT]: https://dplyr.tidyverse.org/reference/mutate.html
+[SEL]: https://dplyr.tidyverse.org/reference/select.html
+[FIL]: https://dplyr.tidyverse.org/reference/filter.html
+[SUM]: https://dplyr.tidyverse.org/reference/summarise.html
+[ARR]: https://dplyr.tidyverse.org/reference/arrange.html
+]
+
+]
+
+.panel[.panel-name[Nossos dados]
+
+
+|fabricante |modelo | cilindrada|  ano| cilindros|transmissao |tracao | cidade| rodovia|combustivel |classe   |
+|:----------|:------|----------:|----:|---------:|:-----------|:------|------:|-------:|:-----------|:--------|
+|audi       |a4     |        1.8| 1999|         4|auto(l5)    |d      |     18|      29|p           |compacto |
+|audi       |a4     |        1.8| 1999|         4|manual(m5)  |d      |     21|      29|p           |compacto |
+|audi       |a4     |        2.0| 2008|         4|manual(m6)  |d      |     20|      31|p           |compacto |
+|audi       |a4     |        2.0| 2008|         4|auto(av)    |d      |     21|      30|p           |compacto |
+|audi       |a4     |        2.8| 1999|         6|auto(l5)    |d      |     16|      26|p           |compacto |
+|audi       |a4     |        2.8| 1999|         6|manual(m5)  |d      |     18|      26|p           |compacto |
+|audi       |a4     |        3.1| 2008|         6|auto(av)    |d      |     18|      27|p           |compacto |
+]
+.panel[.panel-name[Let's go!]
+&lt;img src="img/lets-go.gif" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+&lt;!-- x --&gt;
+]
+---
+
+## Algo sobre a função `mutate()`
+
+.panelset[
+.panel[.panel-name[Ideia Visual]
+.pull-left[
+- cria uma nova coluna (variável) que esteja relacionada com outras colunas (variáveis) ou com alguma relação matemática.
+- Um exemplo:
+
+```r
+dados_mpg %&gt;% 
+  mutate(
+    cidade_km = 1.6 * cidade
+  )
+```
+]
+.pull-right[
+&lt;img src="img/mutate.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+]
+.panel[.panel-name[Prática I]
+&lt;img src="img/gato.gif" width="50%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[`recode()`]
+.pull-left[
+- Associação harmoniosa
+    + Uma delas é a `recode()`.
+
+- Exemplo: na variável `transmissao`:
+    + duas categorias de marchas: _manual_ ou _automática_.
+- Como poderíamos criar uma coluna onde apareça apenas esses duas categorias?
+    + `distinct()`
+    + recodificar
+]
+.pull-right[
+
+```r
+mutate(
+  nova_variavel = recode(
+    variavel_antiga,
+    "variacao_antiga_1" = "nova_variacao_1",
+    "variacao_antiga_2" = "nova_variacao_2",
+    ...
+  )
+)
+```
+]
+]
+.panel[.panel-name[Prática II]
+&lt;img src="img/gato.gif" width="50%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;!-- x --&gt;
+]
+
+---
+
+## Algo sobre a função `select()`
+.panelset[
+.panel[.panel-name[Ideia Geral]
+.pull-left[
+- Seleciona colunas
+- Existem muitas formas de seleção:
+    + `select(cilindros)`
+    + `select(!cilindros)` 
+        * `select(-cilindros)`
+    + `select(fabricante, ..., ano)`
+    + `select(fabricante:ano)`
+    + `select(1:4)`
+    + misturando tudo!
+]
+.pull-right[
+&lt;img src="img/select.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+]
+.panel[.panel-name[Prática]
+&lt;img src="img/preguica.gif" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
+&lt;!-- x --&gt;
+]
+---
+
+## Algo sobre a função `filter()`
+.panelset[
+.panel[.panel-name[Ideia Geral]
+.pull-left[
+- filtra **linhas**
+- A filtragem deve seguir alguma lógica
+    + operadores lógicos
+
+```r
+filter(
+  fabricante == "toyota" &amp; cilindrada &gt; 3
+)
+```
+- Uma outra forma de filtrar linhas
+    + `slice()`
+]
+.pull-right[
+&lt;img src="img/filter.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[Operadores Lógicos]
+&lt;img src="img/operadores_logicosl.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+]
+.panel[.panel-name[Prática]
+&lt;img src="img/pregica2.gif" width="55%" style="display: block; margin: auto;" /&gt;
+
+]
+&lt;!-- x --&gt;
+]
+---
+
+## Algo sobre a função `summarise()`
+.panelset[
+.panel[.panel-name[Ideia Geral]
+.pull-left[
+- Quantificar variáveis
+  + média 
+  + mediana
+  + desvio padrão 
+  + coeficiente de correlação 
+  + frequência absoluta, relativa ou acumulada; 
+  + quantis
+  + máximo e mínimo
+  + etc.
+
+```r
+summarise(
+    media_cidade = mean(cidade),      
+    mediana_cidade = median(cidade),  
+    dp_cidade = sd(cidade),           
+    max_cidade = max(cidade),         
+    min_cidade = min(cidade)          
+  ) 
+```
+
+]
+.pull-right[
+&lt;img src="img/summarise.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+]
+.panel[.panel-name[Pratica I]
+&lt;img src="img/preguica3.gif" width="25%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[Misturando]
+- Usando a função `filter()`
+- Exemplo 01
+
+```r
+dados_mpg %&gt;% 
+  filter(fabricante == "chevrolet") %&gt;%  # filtra os carros da chevrolet
+  summarise(media_cidade = mean(cidade)) # sumariza com a média
+```
+- Exemplo 02
+
+```r
+dados_mpg %&gt;% 
+  filter(fabricante == "chevrolet" &amp; combustivel == "r") %&gt;% 
+  summarise(media_gasolina = mean(cidade))
+```
+]
+.panel[.panel-name[Pratica II]
+&lt;img src="img/preguica3.gif" width="25%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[`group_by()`]
+.pull-left[
+- separa as categorias em cada observação semelhante, agrupando-as adequadamente.
+
+```r
+dados_mpg %&gt;% 
+  group_by(fabricante) %&gt;% 
+  summarise(media_cidade = mean(cidade))
+```
+]
+.pell-right[
+&lt;img src="img/group_by.png" width="50%" style="display: block; margin: auto;" /&gt;
+]
+]
+.panel[.panel-name[Prática III]
+&lt;img src="img/preguica3.gif" width="25%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[Frequência]
+.pull-left[
+- Usando o agrupamento
+
+```r
+dados_mpg %&gt;% 
+  group_by(combustivel) %&gt;% 
+  select(combustivel) %&gt;% 
+  summarise(
+    n = n(),             # frequência absoluta
+    f = (n / 234) * 100  # frequência relativa
+  )
+```
+]
+.pull-right[
+- Sem agrupamento direto
+
+```r
+dados_mpg %&gt;% 
+  count(combustivel)
+```
+]
+]
+.panel[.panel-name[Prática IV]
+&lt;img src="img/preguica3.gif" width="25%" style="display: block; margin: auto;" /&gt;
+]
+
+&lt;!-- x --&gt;
+]
+---
+
+## Algo sobre a função `arrange()`
+.panelset[
+.panel[.panel-name[Ideia Geral]
+.pull-left[
+- Organiza de forma crescente
+    + `desc()` 
+- Exemplo 01
+
+```r
+dados_mpg %&gt;% 
+  group_by(fabricante) %&gt;% 
+  summarise(media_cidade = mean(cidade)) %&gt;% 
+  arrange(media_cidade) # note a variável dentro do argumento da função
+```
+
+- Exemplo 02
+
+```r
+dados_mpg %&gt;% 
+  select(modelo, transmissao, cidade) %&gt;% 
+  arrange(desc(cidade)) %&gt;% 
+  top_n(5)
+```
+
+]
+.pull-right[
+&lt;img src="img/arrange.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[Prática]
+&lt;img src="img/pratica-arrange.gif" width="40%" style="display: block; margin: auto;" /&gt;
+
+]
+]
+&lt;!-- x --&gt;
+]
+---
+
+## Apenas a Quantificação Estatística é Importante?
+
+.panelset[
+.panel[.panel-name[Os Cegos e o Elefante]
+&lt;img src="img/elefante.jpg" width="70%" style="display: block; margin: auto;" /&gt;
+]
+
+.panel[.panel-name[Quarteto de Anscombe]
+&lt;img src="img/tabela-anscombe.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.panel[.panel-name[Prática]
+&lt;img src="img/queda.gif" width="60%" style="display: block; margin: auto;" /&gt;
+
+]
+&lt;!-- x --&gt;
+]
+
+
+
+---
+class: center, middle
+
+# Fim!
+
+##### Veja atualizações na página de nossa disciplina no GitHub:
+
+[![](img/github_small.png)](https://github.com/icaro-freire/estat_2020.1) &lt;/br&gt;
+[**Estat_2020.1**](https://github.com/icaro-freire/estat_2020.1)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
