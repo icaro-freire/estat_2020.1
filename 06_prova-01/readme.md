@@ -5,4 +5,4 @@ Coloque **seu nome** e o **link** para o repositório.
 
 | nome | link |
 | ---  | ---  |
-| seu nome | seu link |
+| Bruno Barros dos Passos | [link ](https://github.com/brunnoobarros/01_avaliacao)
