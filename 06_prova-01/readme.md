@@ -7,3 +7,4 @@ Coloque **seu nome** e o **link** para o repositório.
 | ---  | ---  |
 | seu nome | seu link |
 |Tiago dos Santos Alves|[Avaliação I](https://github.com/Tiago2332/avaliacao_01)
+| Yago da Silva Menezes | [Avaliação 01](https://github.com/yago-menezes/avaliacao_01) |
