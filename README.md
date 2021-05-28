@@ -103,3 +103,6 @@ n   | nome | nota
 01  | Tiago dos Santos Alves    | 95
 02  | Yago da Silva Menezes     | 95 
 03  | Rosenilda Pereira Barreto | 95
+04  | Nilson dos Santos Filho   | 90.7
+05  | Mateus Reis da Silva      | 90.7 
+06  | Sheila Santos da Rosa     | 90.7
