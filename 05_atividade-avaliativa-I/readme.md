@@ -9,3 +9,4 @@
 |Nilson dos Santos Filho | Matemática | [01_atividade-avaliativa](https://github.com/Nison-dos-Satos-Filho/01_atividade-avaliativa)
 |Mateus Reis da Silva | Química | [ATIVIDADE AVALIATIVA 01](https://github.com/Mateusreisdasilva/01_atividade_avaliativa)
 | Bruno Barros dos Passos| Matemática | [Link](https://github.com/brunnoobarros/01_atividade-avaliativa)
+| Sheila santos da Rosa | Matemática | [https://github.com/SheilaRosa/01_atividade-avaliativa](https://github.com/SheilaRosa/01_atividade-avaliativa)
