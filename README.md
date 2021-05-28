@@ -95,3 +95,11 @@ Pacotes tangenciados | Texto | Slide
 [slide3]: https://icaro-freire.github.io/estat_2020.1/03_slides_tidyr.html
 
 **Obs.:** Caso queira acesso aos arquivos `.Rmd` que produzem os slides , veja o _branch_ ["slides".](https://github.com/icaro-freire/estat_2020.1/tree/slides)
+
+### 4.1 Notas da Atividade Avaliativa 01
+
+n   | nome | nota 
+--- | ---  | --- 
+01  | Tiago dos Santos Alves    | 98
+02  | Yago da Silva Menezes     | 98 
+03  | Rosenilda Pereira Barreto | 98
