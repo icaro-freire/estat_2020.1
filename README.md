@@ -100,6 +100,6 @@ Pacotes tangenciados | Texto | Slide
 
 n   | nome | nota 
 --- | ---  | --- 
-01  | Tiago dos Santos Alves    | 98
-02  | Yago da Silva Menezes     | 98 
-03  | Rosenilda Pereira Barreto | 98
+01  | Tiago dos Santos Alves    | 95
+02  | Yago da Silva Menezes     | 95 
+03  | Rosenilda Pereira Barreto | 95
