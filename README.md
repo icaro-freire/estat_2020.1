@@ -106,7 +106,7 @@ n   | nome | nota
 04  | Nilson dos Santos Filho   | 90.7
 05  | Mateus Reis da Silva      | 90.7 
 06  | Sheila Santos da Rosa     | 90.7
-07  | Bruno Barros dos Passos   | NA
+07  | Bruno Barros dos Passos   | 87.5
 
 ## 5. Notas da Prova 01
 
