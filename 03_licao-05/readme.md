@@ -11,4 +11,5 @@ Tiago dos Santos Alves | Matemática | [Lição 05](https://github.com/Tiago2332
 Mateus Reus da Silva | Química | [Lição 05](https://github.com/Mateusreisdasilva/licao_05)
 Nilson dos Santos Filho | Matemática | [Lição 05](https://github.com/Nison-dos-Satos-Filho/Licao_05)
 Bruno Barros dos Passos | Matemática | [Lição 05](https://github.com/brunnoobarros/licao_05)
+Helen de Jesus Borges | Química | [Lição 05](https://github.com/helenborges/licao_05)
 Sheila Santos da Rosa | Matematica | [Lição 05](https://github.com/SheilaRosa/licao_05)

@@ -11,6 +11,4 @@ Bruno Barros dos Passos | [Lição 04](https://github.com/brunnoobarros/texto-ma
 Mateus Reis | [Lição 04](https://github.com/Mateusreisdasilva/texto-markdown)
 Nilson dos Santos Filho|[Lição 04](https://github.com/Nison-dos-Satos-Filho/texto-markdown)
 Sheila Rosa | [Lição 04](https://github.com/SheilaRosa/texto-markdown/blob/main/README.md)
-
-
-
+Helen de Jesus Borges | [Licão 04](https://github.com/helenborges/Texto-markdown/blob/main/README.md)
