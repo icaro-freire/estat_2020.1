@@ -69,7 +69,8 @@ n   | aluno | curso | nota
 03  | Tiago dos Santos Alves    | Matemática | 100 pontos
 04  | Mateus Reis da Silva      | Química    | 100 pontos
 05  | Nilson dos Santos Filho   | Matemática | 100 pontos
-06  | Bruno Barros dos Passos	  | Matemática | 100 pontos	
+06  | Bruno Barros dos Passos	  | Matemática | 100 pontos
+07  | Helen de Jesus Borges     | Química    | 40 pontos
 
 ## 4. Atividade Avaliativa I
 
