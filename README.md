@@ -54,6 +54,7 @@ n   |aluno | curso | nota
 06  | Mateus Reis da Silva      | Química    | 100 pontos
 07  | Nison dos Satos Filho     | Matemática | 100 pontos
 08  | Sheila Rosa               | Química    | 100 pontos
+09  | Helen de Jesus Borges     | Química    | 90 pontos
 
 ## 3. Lição 05
 O objetivo dessa lição é múltiplo: você deve colocar, na pasta `03_licao-05`, deste repoditório, um _link_ que direcione para um repositório criado por você que contenha duas pastas e, em cada uma delas, um arquivo específico: numa, um _script R_ que contém códigos de uma função específica (diponível nesse [gist][GIST]); e noutra, um arquivo `.Rmd` que contrém um documento GitHub (que gera códigos e figuras do R, para serem exibidas no GitHub). 
@@ -68,7 +69,8 @@ n   | aluno | curso | nota
 03  | Tiago dos Santos Alves    | Matemática | 100 pontos
 04  | Mateus Reis da Silva      | Química    | 100 pontos
 05  | Nilson dos Santos Filho   | Matemática | 100 pontos
-06  | Bruno Barros dos Passos	  | Matemática | 100 pontos	
+06  | Bruno Barros dos Passos	  | Matemática | 100 pontos
+07  | Helen de Jesus Borges     | Química    | 40 pontos
 
 ## 4. Atividade Avaliativa I
 
@@ -93,3 +95,11 @@ Pacotes tangenciados | Texto | Slide
 [slide3]: https://icaro-freire.github.io/estat_2020.1/03_slides_tidyr.html
 
 **Obs.:** Caso queira acesso aos arquivos `.Rmd` que produzem os slides , veja o _branch_ ["slides".](https://github.com/icaro-freire/estat_2020.1/tree/slides)
+
+### 4.1 Notas da Atividade Avaliativa 01
+
+n   | nome | nota 
+--- | ---  | --- 
+01  | Tiago dos Santos Alves    | 98
+02  | Yago da Silva Menezes     | 98 
+03  | Rosenilda Pereira Barreto | 98
