@@ -8,3 +8,4 @@
 |Rosenilda Pereira Barreto|Matemática|[atividade](https://github.com/Rosenilda-Barreto/01_atividade-avaliativa)
 |Nilson dos Santos Filho | Matemática | [01_atividade-avaliativa](https://github.com/Nison-dos-Satos-Filho/01_atividade-avaliativa)
 |Mateus Reis da Silva | Química | [ATIVIDADE AVALIATIVA 01](https://github.com/Mateusreisdasilva/01_atividade_avaliativa)
+| Bruno Barros dos Passos| Matemática | [Link](https://github.com/brunnoobarros/01_atividade-avaliativa)
