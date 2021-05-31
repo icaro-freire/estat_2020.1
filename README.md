@@ -71,6 +71,7 @@ n   | aluno | curso | nota
 05  | Nilson dos Santos Filho   | Matemática | 100 pontos
 06  | Bruno Barros dos Passos	  | Matemática | 100 pontos
 07  | Helen de Jesus Borges     | Química    | 40 pontos
+08  | Sheila Santos da Rosa     | Química    | 100 pontos
 
 ## 4. Atividade Avaliativa I
 
